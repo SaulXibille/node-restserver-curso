@@ -10,6 +10,15 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'dev';
 
 let urlDB;
 
+// VENCIMIENTO DEL TOKEN 
+// 60 SEGUNDOS * 60 MINUTOS * 24 HORAS * 30 DIAS
+
+process.env.CADUCIDAD_TOKEN = 60 * 60 * 24 * 30;
+
+// SEED DE AUTENTICACION
+
+process.env.SEED = process.env.SEED || 'este-es-el-seed-en-desarrollo';
+
 if (process.env.NODE_ENV === 'dev') {
     urlDB = 'mongodb://localhost:27017/cafe';
 } else {
